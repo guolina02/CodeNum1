@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<litepal>
+    <dbname value="demo"></dbname>
+    <version value="4"></version>
+    <list>
+        <mapping class="com.gln.codenum1.chapter6.model.News"></mapping>
+        <mapping class="com.gln.codenum1.chapter6.model.Comment"></mapping>
+        <mapping class="com.gln.codenum1.chapter6.model.Introduction"></mapping>
+        <mapping class="com.gln.codenum1.chapter6.model.Category"></mapping>
+    </list>
+</litepal>

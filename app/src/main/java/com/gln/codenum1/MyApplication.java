@@ -1,15 +1,15 @@
 package com.gln.codenum1;
 
-import android.app.Application;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+
+import org.litepal.LitePalApplication;
 
 /**
  * Created by guolina on 2017/6/2.
  */
-public class MyApplication extends Application {
+public class MyApplication extends LitePalApplication {
 
     private boolean mLandscape;
 
