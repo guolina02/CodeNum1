@@ -50,7 +50,7 @@ public class MyProvider extends ContentProvider {
                 break;
             case NEWS_ITEM:
                 String id = uri.getPathSegments().get(1);
-                cursor = myDbHelper.query("news", projection, "id = ?", new String[]{id}, sortOrder);
+                cursor = myDbHelper.query("news", projection, "id = %s", new String[]{id}, sortOrder);
                 break;
             case CATEGORY_DIR:
                 cursor = myDbHelper.query("category", projection, selection, selectionArgs, sortOrder);

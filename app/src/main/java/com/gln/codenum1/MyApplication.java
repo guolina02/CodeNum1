@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
+import com.baidu.mapapi.SDKInitializer;
+
 import org.litepal.LitePalApplication;
 
 /**
