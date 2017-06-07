@@ -5,6 +5,7 @@ import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.gln.codenum1.chapter13.LogUtils;
 
 import org.litepal.LitePalApplication;
 
@@ -14,6 +15,8 @@ import org.litepal.LitePalApplication;
 public class MyApplication extends LitePalApplication {
 
     private boolean mLandscape;
+
+    private static Context mContext;
 
     @Override
     public void onCreate() {
@@ -28,6 +31,14 @@ public class MyApplication extends LitePalApplication {
         } else {
             mLandscape = false;
         }
+
+        LogUtils.level = LogUtils.VERBOSE;
+
+        mContext = getApplicationContext();
+    }
+
+    public static Context getContext() {
+        return mContext;
     }
 
     public boolean isLandscape() {

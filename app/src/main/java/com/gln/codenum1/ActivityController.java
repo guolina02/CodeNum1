@@ -3,6 +3,8 @@ package com.gln.codenum1;
 import android.app.Activity;
 import android.util.Log;
 
+import com.gln.codenum1.chapter13.LogUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,19 +19,19 @@ public class ActivityController {
 
     public static void onActivityCreate(Activity activity) {
         activityList.add(activity);
-        Log.d(TAG, "onActivityCreate: " + activity.getClass().getSimpleName());
+        LogUtils.d(TAG, "onActivityCreate: " + activity.getClass().getSimpleName());
     }
 
     public static void onActivityDestroy(Activity activity) {
         activityList.remove(activity);
-        Log.d(TAG, "onActivityDestroy: " + activity.getClass().getSimpleName());
+        LogUtils.d(TAG, "onActivityDestroy: " + activity.getClass().getSimpleName());
     }
 
     public static void finishAll() {
         for (Activity activity: activityList) {
             if (!activity.isFinishing()) {
                 activity.finish();
-                Log.d(TAG, "finish: " + activity.getClass().getSimpleName());
+                LogUtils.d(TAG, "finish: " + activity.getClass().getSimpleName());
             }
         }
         activityList.clear();

@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.gln.codenum1.chapter11.LocationActivity;
 import com.gln.codenum1.chapter12.MaterialDesignActivity;
+import com.gln.codenum1.chapter14.WeatherActivity;
 import com.gln.codenum1.chapter4.NewsActivity;
 import com.gln.codenum1.chapter5.ForceOfflineActivity;
 import com.gln.codenum1.chapter6.LitePalActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.btn_chapter7).setOnClickListener(this);
         findViewById(R.id.btn_chapter11).setOnClickListener(this);
         findViewById(R.id.btn_chapter12).setOnClickListener(this);
+        findViewById(R.id.btn_chapter14).setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +49,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn_chapter12:
                 intent.setClass(this, MaterialDesignActivity.class);
+                break;
+            case R.id.btn_chapter14:
+                intent.setClass(this, WeatherActivity.class);
                 break;
         }
         startActivity(intent);

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gln.codenum1.R;
+import com.gln.codenum1.chapter13.LogUtils;
 
 /**
  * Created by guolina on 2017/6/1.
@@ -27,7 +28,7 @@ public class NewsContentFragment extends Fragment {
         mRoot = inflater.inflate(R.layout.fragment_news_content, container);
         mTextTitle = (TextView) mRoot.findViewById(R.id.text_news_title);
         mTextContent = (TextView) mRoot.findViewById(R.id.text_news_content);
-        Log.d("NewsContentFragment", "onCreateView");
+        LogUtils.d("NewsContentFragment", "onCreateView");
         return mRoot;
     }
 

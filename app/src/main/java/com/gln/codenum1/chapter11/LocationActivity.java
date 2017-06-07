@@ -24,6 +24,7 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.gln.codenum1.BaseActivity;
 import com.gln.codenum1.R;
+import com.gln.codenum1.chapter13.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -176,7 +177,7 @@ public class LocationActivity extends BaseActivity {
 
         @Override
         public void onConnectHotSpotMessage(String s, int i) {
-            Log.d(TAG, "gln_onConnectHotSpotMessage[s: " + s + ", i: " + i);
+            LogUtils.d(TAG, "gln_onConnectHotSpotMessage[s: " + s + ", i: " + i);
         }
     }
 }

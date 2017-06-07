@@ -63,4 +63,13 @@
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:text="Chapter12"/>
+
+    <Button
+        android:id="@+id/btn_chapter14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:text="Chapter14"/>
 </LinearLayout>

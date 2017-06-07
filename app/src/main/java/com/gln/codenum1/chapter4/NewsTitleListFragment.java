@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gln.codenum1.R;
+import com.gln.codenum1.chapter13.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class NewsTitleListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_news_title_list, container);
         mRecyclerView = (RecyclerView) mRoot.findViewById(R.id.news_title_list);
-        Log.d("NewsTitleListFragment", "onCreateView");
+        LogUtils.d("NewsTitleListFragment", "onCreateView");
         return mRoot;
     }
 
@@ -50,7 +51,7 @@ public class NewsTitleListFragment extends Fragment {
             mRecyclerView.setAdapter(new MyAdapter());
         }
 
-        Log.d("NewsTitleListFragment", "onResume");
+        LogUtils.d("NewsTitleListFragment", "onResume");
     }
 
     private void loadData() {
@@ -91,7 +92,7 @@ public class NewsTitleListFragment extends Fragment {
                     }
                 }
             });
-            Log.d("Myadapter", "onCreateViewHolder");
+            LogUtils.d("Myadapter", "onCreateViewHolder");
             return holder;
         }
 

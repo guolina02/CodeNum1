@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.util.StringBuilderPrinter;
 
+import com.gln.codenum1.chapter13.LogUtils;
 import com.gln.codenum1.chapter6.model.Category;
 import com.gln.codenum1.chapter6.model.Comment;
 import com.gln.codenum1.chapter6.model.Introduction;
@@ -123,29 +124,29 @@ public class MyDbHelper {
         Comment commentFirst = DataSupport.findFirst(Comment.class);
         Comment commentLast = DataSupport.findLast(Comment.class);
 
-        Log.d(TAG, "comment id:2 " + comment2);
-        Log.d(TAG, "comment first " + commentFirst);
-        Log.d(TAG, "comment last " + commentLast);
+        LogUtils.d(TAG, "comment id:2 " + comment2);
+        LogUtils.d(TAG, "comment first " + commentFirst);
+        LogUtils.d(TAG, "comment last " + commentLast);
 
         List<Introduction> introductionList = DataSupport.findAll(Introduction.class);
         for (Introduction introduction: introductionList) {
-            Log.d(TAG, "introduction " + introduction);
+            LogUtils.d(TAG, "introduction " + introduction);
         }
 
         List<News> newsList = DataSupport.where("commentCount > ?", "0").find(News.class);
         for (News news: newsList) {
-            Log.d(TAG, "news commentCount > 0 " + news);
+            LogUtils.d(TAG, "news commentCount > 0 " + news);
         }
 
         List<News> newsList1 = DataSupport.select("title", "content").where("commentCount > ?", "0").find(News.class);
         for (News news: newsList1) {
-            Log.d(TAG, "news select title&content commentCount > 0 " + news);
+            LogUtils.d(TAG, "news select title&content commentCount > 0 " + news);
         }
 
         List<News> newsList2 = DataSupport.select("title", "content").where("commentCount > ?", "0")
                 .order("publishDate desc").limit(10).offset(1).find(News.class);
         for (News news: newsList2) {
-            Log.d(TAG, "news select title&content commentCount > 0 order limit offset" + news);
+            LogUtils.d(TAG, "news select title&content commentCount > 0 order limit offset" + news);
         }
 
         Cursor cursor = DataSupport.findBySQL("select id, name from category where name = ?", "Category1");
@@ -153,7 +154,7 @@ public class MyDbHelper {
             Category category = new Category();
             category.setId(cursor.getInt(cursor.getColumnIndex("id")));
             category.setName(cursor.getString(cursor.getColumnIndex("name")));
-            Log.d(TAG, "category " + category);
+            LogUtils.d(TAG, "category " + category);
         }
         cursor.close();
     }
@@ -174,7 +175,7 @@ public class MyDbHelper {
         double average = DataSupport.average(News.class, "commentCount");
         int max = DataSupport.max(News.class, "commentCount", int.class);
         int min = DataSupport.min(News.class, "commentCount", int.class);
-        Log.d(TAG, "count=" + count + ", sum=" + sum + ", average=" + average + ", max=" + max + ", min=" + min);
+        LogUtils.d(TAG, "count=" + count + ", sum=" + sum + ", average=" + average + ", max=" + max + ", min=" + min);
     }
 
     public Cursor query(String db, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
@@ -196,8 +197,8 @@ public class MyDbHelper {
         String where = String.format(selection, selectionArgs);
         builder.append(where);
         builder.append(" order by ").append(sortOrder);
-        Log.d(TAG, where);
-        Log.d(TAG, builder.toString());
+        LogUtils.d(TAG, where);
+        LogUtils.d(TAG, builder.toString());
         return DataSupport.findBySQL(builder.toString());
     }
 }

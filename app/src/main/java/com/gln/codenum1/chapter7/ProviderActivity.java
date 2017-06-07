@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.gln.codenum1.BaseActivity;
 import com.gln.codenum1.R;
+import com.gln.codenum1.chapter13.LogUtils;
 
 /**
  * Created by guolina on 2017/6/2.
@@ -50,7 +51,7 @@ public class ProviderActivity extends BaseActivity implements View.OnClickListen
                 Cursor cursor = contentResolver.query(uri, new String[]{"id", "name"}, null, null, "id desc");
                 if (cursor != null) {
                     while (cursor.moveToNext()) {
-                        Log.d(TAG, "category [id: " + cursor.getInt(cursor.getColumnIndex("id")) + ", name: " + cursor.getString(cursor.getColumnIndex("name")));
+                        LogUtils.d(TAG, "category [id: " + cursor.getInt(cursor.getColumnIndex("id")) + ", name: " + cursor.getString(cursor.getColumnIndex("name")));
                     }
                 }
                 break;
